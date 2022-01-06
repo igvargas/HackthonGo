@@ -1,1 +1,1 @@
-package invoices
+package internal
