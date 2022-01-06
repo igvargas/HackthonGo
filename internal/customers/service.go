@@ -4,8 +4,6 @@ import "github.com/igvargas/HackthonGo/internal/models"
 
 type ServiceSQL interface {
 	Store(customer models.Customer) (models.Customer, error)
-	// GetOne(id int) (models.Customer, error)
-	// GetAll() ([]models.Customer, error)
 }
 type serviceSQL struct {
 	repository RepositorySQL

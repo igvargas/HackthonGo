@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"database/sql"
 	"log"
 
 	"github.com/igvargas/HackthonGo/internal/models"
@@ -16,10 +17,11 @@ type RepositorySQL interface {
 }
 
 type repositorySQL struct {
+	db *sql.DB
 }
 
-func NewRepositorySQL() RepositorySQL {
-	return &repositorySQL{}
+func NewRepositorySQL(database *sql.DB) RepositorySQL {
+	return &repositorySQL{db: database}
 }
 
 func (r *repositorySQL) Store(customer models.Customer) (models.Customer, error) {
